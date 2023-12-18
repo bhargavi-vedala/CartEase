@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+  <style>
+    .highlight-image {
+      border: 3px solid #ffc107; /* Add a border with a highlight color */
+      box-shadow: 0 0 10px rgba(255, 193, 7, 0.5); /* Add a box shadow with a highlight color and transparency */
+    }
+  </style>
+
+  <div class="container mt-5">
+    <center>
+      <h1 class="text-white">ALL CATEGORIES</h1>
+    </center> 
+    <div class="row mt-4">
+      {% for i in c %}
+        <div class="col-md-4 mb-4">
+          <div class="card text-center">
+            <a href="{% url 'cartapp:products' i.id i.slug %}" class="d-block">
+              <img src="{{ i.img.url }}" alt="{{ i.title }}" class="card-img-top img-thumbnail rounded-circle mx-auto highlight-image" style="width: 200px; height: 200px;">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title mt-2"><a href="{% url 'cartapp:products' i.id i.slug %}" class="text-dark">{{ i.title }}</a></h5>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div> 
+  </div>
+{% endblock %}

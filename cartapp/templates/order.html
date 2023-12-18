@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<b>Cart:</b><br>
+{% for i in items %}
+{{i.product}}<br>
+{% endfor %}
+pay:{{total}}
+<h1>Show me the money!</h1>
+<!-- writes out the form tag automatically -->
+{{ form.render }}
+<style>
+    body{
+        background-image: url("https://www.allrideapps.com/wp-content/uploads/2022/01/shopping_groceries_o_Rx60M-1024x683.jpg");
+        background-size: cover;
+        font-size: 40px;
+    }
+</style>
+{% endblock %}

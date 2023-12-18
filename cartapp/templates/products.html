@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    {% for product in d %}
+    <div class="col-md-3 mb-3">
+        <div class="text-center">
+            <img src="{{ product.img.url }}" class="rounded-circle mx-auto" width="200" height="200" alt="{{ product.title }}">
+            <div>
+                {% if product.in_stock is True %}
+                <h5 class="text-white">Out of Stock</h5>
+                {% else %}
+                <h5 class="mb-0"><a href="{% url 'cartapp:detail' product.id product.slug %}" class="text-white">{{ product.title }}</a></h5>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<style>
+    body {
+        background-image: url("https://st4.depositphotos.com/3664757/27559/i/450/depositphotos_275596086-stock-photo-ingredients-making-traditional-italian-pesto.jpg");
+        background-size: cover;
+    }
+</style>
+{% endblock %}

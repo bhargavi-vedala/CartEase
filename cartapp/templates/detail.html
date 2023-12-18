@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    body{
+        font-size: 25px;
+        font-family: 'Times New Roman', Times, serif;
+        color:black;
+    }
+</style>    
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+   <h2> {{d.title}}</h2><br> 
+        {{d.description}}<br><br>
+       <b> ₹{{d.price}}</b><br>
+</div>
+        <div class="col-md-6">
+       <br> <img src="{{d.img.url}}" widt="400" height="500" >
+        </div>
+    </div>
+
+<form action="{% url 'cartapp:detail' d.id d.slug%}" method="post">
+    {% csrf_token %}
+    {{ f }}
+    <input type="submit" value="Add to Cart">
+</form>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    
+	</form>
+
+	</div>
+
+</div>
+	<br><br><br>
+	<h6>Reviews:</h6>
+    
+    {% for i in reviews %}
+
+    {{forloop.counter}} - {{i.review}} <br>
+ </center>
+
+    {% endfor %}
+    <style>
+        body{
+            background-image: url("https://img.freepik.com/premium-photo/supermarket-store-aisle-interior-abstract-blurred-background_293060-10503.jpg?size=338&ext=jpg&ga=GA1.1.1546980028.1702684800&semt=ais");
+            background-size: cover;
+        }
+    </style>
+</div>
+
+
+{% endblock %}

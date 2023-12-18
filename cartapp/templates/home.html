@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</head>
+<style>
+    /* Style the button */
+    button {
+        padding: 15px 30px;
+        color: white;
+        text-decoration: none;
+        background-color: #ff69b4; /* Pink color */
+        border: none;
+        border-radius: 25px; /* Rounder corners */
+        cursor: pointer;
+        font-size: 20px;
+        transition: background-color 0.3s ease; /* Smooth transition */
+    }
+
+    /* Change the background color on hover */
+    button:hover {
+        background-color: #d34683; /* Lighter pink on hover */
+    }
+
+    /* Carousel styles */
+    .carousel-caption {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #000; /* Black text color */
+    }
+
+    .carousel-caption h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+
+    .carousel-inner img {
+        width: 100%;
+        height: auto;
+    }
+</style>
+<body>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/325683431/original/46ceb0a04a9612c58392b4645c2d0feca100e900.png" width="150" height="150" class="d-block w-100" alt="Slide 1">
+                <div class="carousel-caption">
+                    <br><br><br><br><br><br><br><button><a href="{% url 'cartapp:category' %}">EXPLORE</a></button>
+                </div>
+            </div>
+    
+            <!-- Add more carousel items here as needed -->
+            <div class="carousel-item">
+                <img src="https://qph.cf2.quoracdn.net/main-qimg-8c11ddb5bff6b633cf249cca13204a0c-lq" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://media.licdn.com/dms/image/D4D12AQF95-PIinl1rA/article-cover_image-shrink_720_1280/0/1686996932214?e=2147483647&v=beta&t=vPCPKBQOyX26HvKPrd2X2nrxPQiS5TGoOsor3XF82sI" class="d-block w-100" alt="Slide 3">
+            </div>
+        </div>
+    
+        <!-- Add navigation controls -->
+        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>    
+</body>
+</html>

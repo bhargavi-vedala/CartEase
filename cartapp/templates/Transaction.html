@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Transaction Successful</title>
+    <!-- Bootstrap CSS -->
+    
+<style>
+    body {
+        background-image: url('background.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+        color: #28a745;
+    }
+</style>
+<body>
+
+<div class="container">
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <div class="card text-center">
+            <div class="card-body">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXb_Zbkcn4XqYNk90WZQGspZev4NheHTdZ6ccS8EWO_iE0GL888wJMI3RI90dUQC5_Db8&usqp=CAU">
+                <h1 class="display-4">Transaction Successful!</h1>
+                <p class="lead">Thank you for your purchase.</p>
+                <a href="{% url 'cartapp:category' %}" class="btn btn-success">Go to Dashboard</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
